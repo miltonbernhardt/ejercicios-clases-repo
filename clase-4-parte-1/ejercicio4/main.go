@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"os"
+	"time"
 )
 
 func main() {
@@ -13,6 +14,7 @@ func main() {
 	monthsWorked := rand.Intn(12 - 9) + 9
 
 	for i := 0; i < monthsWorked; i++ {
+		rand.Seed(time.Now().UnixNano())
 		hoursWorked := rand.Intn(110 - 79) + 80
 		hourValue := rand.Intn(95 - 80) + 80
 		salary, err := calculateSalary(hoursWorked, hourValue)
